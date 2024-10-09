@@ -1,0 +1,21 @@
+embed_dim: 50
+pad_len: 64
+data_path: "./Dataset/"
+wandb_path: "./wandb/"
+max_steps: 4000
+batch_size: 64
+learning_rate: 0.0035
+
+mlp_config:
+  dropout_rate: 0.3
+
+cnn_config:
+  dropout_rate: 0.5
+  filter_window_lens: [3,4,5]
+  feature_map_num: 100
+
+lstm_config:
+  dropout_rate: 0.3
+  hidden_size: 50
+  num_layers: 2
+  

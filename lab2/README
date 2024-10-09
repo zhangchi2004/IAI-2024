@@ -1,0 +1,52 @@
+# IAI 作业2
+
+> 张驰 2022010754 <zhang-ch22@mails.tsinghua.edu.cn>
+
+作业共包括以下几个文件：
+
+- `main.py`：主程序，用于运行训练。
+- `model.py`：定义模型结构。
+- `train.py`：训练模型。
+- `dataloader.py`：定义数据处理函数。
+- `config.yaml`：定义配置参数。
+
+运行代码需要以下的包：
+
+```bash
+gensim
+numpy
+torch
+pytroch-lightning
+yaml
+wandb
+```
+
+进行训练时，需要将数据和词向量文件以如下方法和命名添加到本目录下：
+
+```bash
+- Dataset
+   |- train.txt
+   |- validation.txt
+   |- test.txt
+   |- wiki_word2vec_50.bin
+- main.py
+- ...
+```
+
+或者在 `config.yaml` 中指定其他路径。
+
+同时训练三个模型：
+
+```bash
+python main.py
+```
+
+只训练一个模型：
+
+```bash
+python train.py --model=MLP
+python train.py --model=CNN
+python train.py --model=LSTM
+```
+
+可以在 `config.yaml` 修改模型参数。训练结果保存在`wandb`中，可以通过`wandb`的网页查看训练过程。
